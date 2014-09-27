@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CityTaxi</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="User_Icon">User Icon</string>
+    <string name="Username">Username</string>
+    <string name="Email_Icon">Email Icon</string>
+    <string name="Email">Email</string>
+    <string name="Phone_Icon">Phone Icon</string>
+    <string name="Phone">Phone</string>
+    <string name="Pass_Icon">Pass Icon</string>
+    <string name="Password">Password</string>
+    <string name="passDescription">Re-Password</string>
+    <string name="RePass_text">Confirm Password</string>
+    <string name="Register">Register</string>
+    <string name="Login">Login</string>
+   
+    
+    
+    <string name="registerLink">Do not have any account yet?</string>
+	<string name="loginLink">Already registred. Login Me!</string>
+	<string name="Map_Menu">Map Menu</string>
+	<string name="Search">Search</string>
+	<string name="action_compose">Compose</string>
+	<string name="Log_out">Log out</string>
+	
+
+</resources>

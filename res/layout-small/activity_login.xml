@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp" >
+
+    <ImageView
+        android:id="@+id/emailIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/Email_Icon"
+        android:src="@drawable/mail60" />
+
+    <EditText
+        android:id="@+id/LogEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/emailIcon"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:hint="@string/Email"
+        android:inputType="textEmailAddress" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/LogPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/passIcon"
+        android:layout_alignLeft="@+id/LogEmail"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:hint="@string/Password"
+        android:inputType="textPassword" />
+
+    <ImageView
+        android:id="@+id/passIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailIcon"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/Pass_Icon"
+        android:src="@drawable/pass60" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/passIcon"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/LogPass"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/button_login"
+        android:text="@string/Login"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/LinkRegisterId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/LogEmail"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:text="@string/registerLink"
+        android:textColor="#edac00"
+        android:textSize="18sp" />
+
+</RelativeLayout>
