@@ -31,13 +31,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
 	public class MainActivity extends Activity {
 	 
 	    
-	
-
-
 		// Google Map
 	    GoogleMap googleMap;
 	    Marker UserMarket;
-	    double Lat, Lon;
+	    private double Lat, Lon;
+	    private String UserEmail;
 	 
 	     
 	    // Session Manager Class
@@ -45,27 +43,26 @@ import com.google.android.gms.maps.model.MarkerOptions;
 	 
 	    
 	    
+	    /////  GETTER AND SETTER OF MY VARIABLES//////////
 	    
-		  ///Execute function each 10 seconds
-			
-
-		
-
-		public double getLat() {
-			return Lat;
-		}
-
-		public void setLat(double lat) {
-			Lat = lat;
-		}
-
-		public double getLon() {
-			return Lon;
-		}
-
-		public void setLon(double lon) {
-			Lon = lon;
-		}
+	    public void setLat(double Lat){	
+	    	this.Lat = Lat;
+	    }
+	    
+	    public void setLon(double Lon){	
+	    	this.Lon = Lon;
+	    }
+	    
+	    public double getLat(){
+	    	return this.Lat;
+	    }
+	    public double getLon(){
+	    	return this.Lon;
+	    }
+	    
+	  
+	    
+	    
 	    
 	    
 	    @Override
@@ -77,12 +74,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 	        session = new SessionManager(getApplicationContext());
 	        //  Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
 	 
-	        // Execute the background function to update user position each 10 second
-	        UpdateGpsUser updateGPS = new UpdateGpsUser();
-	        updateGPS.UpdateGPS();
-	        
-	        
-	        
+
 	        
 	        if(session.isLoggedIn() == false){
 	        	Intent goLogin = new Intent(this, LoginActivity.class);
@@ -95,22 +87,30 @@ import com.google.android.gms.maps.model.MarkerOptions;
 			        	
 			        	GPSTracker gps = new GPSTracker(this);
 			        	if(gps.canGetLocation()){ 
-			        		Lat = gps.getLatitude(); // returns latitude
-			        		Lon = gps.getLongitude(); // returns longitude
 			        		
-			        		 // Loading map
-			        		initilizeMap();
-			        		
-			        		LatLng CURRENT_LOCATION = new LatLng(Lat,Lon);
-			        		//Get current position on map
-			        		CameraUpdate update = CameraUpdateFactory.newLatLngZoom(CURRENT_LOCATION, 15);
-			        		googleMap.animateCamera(update);
 			        		
 			        		/////////// GET INFORMATION OF USER WHO IS LOGED /////////////
 			        		HashMap<String, String> User = session.getUserDetails();
 			        		String UserName = User.get("name");
 			        		String Role = User.get("role");
 			        		int intRole = Integer.parseInt(Role);
+			        		this.UserEmail = User.get("email");
+			        		
+			        	
+			        		this.Lat = gps.getLatitude(); // returns latitude
+			        		this.Lon = gps.getLongitude(); // returns longitude
+			        		
+			        		
+			        		 // Loading map
+			        		initilizeMap();
+			        		
+			        		LatLng CURRENT_LOCATION = new LatLng(this.Lat,this.Lon);
+			        		//Get current position on map
+			        		CameraUpdate update = CameraUpdateFactory.newLatLngZoom(CURRENT_LOCATION, 15);
+			        		googleMap.animateCamera(update);
+			        		
+			        	
+			        		
 			        		
 			        		//////////////// PRINT TO DEBUG //////////////////
 			        	    Log.e("Mi name is:",User.toString());
@@ -122,7 +122,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 			        	    /////////// ROLE 1   --  USER
 			        	    if(intRole == 1){
 			        	    
-			        	    	UserMarket = googleMap.addMarker(new MarkerOptions()
+			        	    	this.UserMarket = googleMap.addMarker(new MarkerOptions()
 			        		       .position(CURRENT_LOCATION)
 			        		       .title(UserName)
 			        		       .snippet("Current Location")
@@ -132,16 +132,16 @@ import com.google.android.gms.maps.model.MarkerOptions;
 			        	    /////////// ROLE 2   --  TAXI DRIVER
 			        	    }else if(intRole == 2){
 			        	    	
-			        	    	UserMarket = googleMap.addMarker(new MarkerOptions()
+			        	    	this.UserMarket = googleMap.addMarker(new MarkerOptions()
 			        		       .position(CURRENT_LOCATION)
 			        		       .title(UserName)
 			        		       .icon(BitmapDescriptorFactory.fromResource(R.drawable.taxi))
 			        				);
 			        	    	
-			        	    /////////// ROLE 2   --  ADMINISTRATOR	
+			        	    /////////// ROLE 3   --  ADMINISTRATOR	
 			        	    }else {
 			        	    	
-			        	    	UserMarket = googleMap.addMarker(new MarkerOptions()
+			        	    	this.UserMarket = googleMap.addMarker(new MarkerOptions()
 			        	    	   .position(CURRENT_LOCATION)
 			        		       .title(UserName)
 			        		       .snippet("Current Location")
@@ -154,14 +154,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 			        	    LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 			        	    LocationListener ll = new mylocationlistener();
 			        	    lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,ll);
-			        	    
-			        	    
-			        	    
-			        	    
-			        	    
+			        	  
 				       } else{
-				        		
-				        	gps.showSettingsAlert();
+				    	   	gps.showSettingsAlert();
 				       }
 			        	
 			        	
@@ -177,6 +172,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 	    
 	    
 	    class mylocationlistener implements LocationListener{
+	    	
 
 			@Override
 			public void onLocationChanged(Location location) {
@@ -186,20 +182,17 @@ import com.google.android.gms.maps.model.MarkerOptions;
 						double newLat = location.getLatitude();
 						double newLng = location.getLongitude();
 						
-						setLat(newLat);
-						setLon(newLng);
-						
-						//Log.e("Latitude:",Double.toString(newLat));
-						//Log.e("Longitued:",Double.toString(newLng));
-						
-						
+						//Log.e("Latitude", Double.toString(newLat));
+						//Log.e("Longitude", Double.toString(newLng));
+			
 						LatLng CURRENT_CHANGED = new LatLng(newLat,newLng);
 						UserMarket.setPosition(CURRENT_CHANGED);
+		
 						
-						//// Open updateGPSUser Class
-					
-					    
-			
+						//// Setup lat on lat on my globals variables
+							setLat(newLat);
+							setLon(newLng);	
+						
 				}
 				
 			}
@@ -219,7 +212,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 			@Override
 			public void onStatusChanged(String provider, int status,
 					Bundle extras) {
-				// TODO Auto-generated method stub
 				
 			}
 	 
@@ -239,6 +231,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 	        if (googleMap == null) {
 	            googleMap = ((MapFragment) getFragmentManager().findFragmentById(
 	                    R.id.map)).getMap();
+	            
+	          /// initialize calss UpdateGpsUser
+		    	UpdateGpsUser trackUserMysql = new UpdateGpsUser();
+		    	trackUserMysql.setLatitude(this.Lat);
+		    	trackUserMysql.setLongitud(this.Lon);
+		    	trackUserMysql.UpdateGPS(this.UserEmail);
 	 
 	            // check if map is created successfully or not
 	            if (googleMap == null) {
@@ -260,7 +258,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 	    
 	    @Override
 	    public boolean onCreateOptionsMenu(Menu menu) {
-	    	
 	    	
 	    	MenuInflater mif = getMenuInflater();
 	    	mif.inflate(R.menu.main_activity_actions, menu);

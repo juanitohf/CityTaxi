@@ -36,7 +36,7 @@ public class RegisterActivity extends Activity implements OnClickListener {
 		EditText UserName, Email, Phone, Pass1, Pass2;
 		String strName, strEmail, strPhone,strPass, strPass2;
 		
-		private static final String URL = "http://web-huertas.com/work/programs/Server4350/Register.php";
+		private static final String URL = "http://web-huertas.com/work/programs/CityTaxi_Server/Register.php";
 	
 		
     @Override
@@ -325,7 +325,7 @@ public class RegisterActivity extends Activity implements OnClickListener {
 					     })
 				     */
 				    .setIcon(android.R.drawable.ic_input_add)
-				     .show();
+				    .show();
 				 
 				
 			 

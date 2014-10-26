@@ -34,7 +34,7 @@ public class LoginActivity extends Activity implements OnClickListener  {
 	Button btnLogin, linkToRegister;
 	EditText EtLogEmail,EtLogPass;
 	String strEmail,strPass;
-	private static final String URL = "http://web-huertas.com/work/programs/Server4350/Login.php";
+	private static final String URL = "http://web-huertas.com/work/programs/CityTaxi_Server/Login.php";
 	
 	
     @Override
@@ -208,10 +208,7 @@ public class LoginActivity extends Activity implements OnClickListener  {
 	                        JSONObject reader = new JSONObject(result);
 	                        
 	                        respond(reader);
-	                        
-	                      
-	                       
-	                    
+	               
 	                    }
 
 	                } catch(Exception e) {
