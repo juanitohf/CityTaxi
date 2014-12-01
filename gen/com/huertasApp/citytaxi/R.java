@@ -395,41 +395,52 @@ containing a value of this type.
         public static final int common_signin_btn_text_pressed_dark=0x7f020019;
         public static final int common_signin_btn_text_pressed_light=0x7f02001a;
         public static final int current_position=0x7f02001b;
-        public static final int ic_action_search=0x7f02001c;
-        public static final int ic_action_settings=0x7f02001d;
-        public static final int ic_launcher=0x7f02001e;
-        public static final int ic_plusone_medium_off_client=0x7f02001f;
-        public static final int ic_plusone_small_off_client=0x7f020020;
-        public static final int ic_plusone_standard_off_client=0x7f020021;
-        public static final int ic_plusone_tall_off_client=0x7f020022;
-        public static final int mail100=0x7f020023;
-        public static final int mail512=0x7f020024;
-        public static final int mail60=0x7f020025;
-        public static final int pass=0x7f020026;
-        public static final int pass100=0x7f020027;
-        public static final int pass60=0x7f020028;
-        public static final int pass60r=0x7f020029;
-        public static final int phone100=0x7f02002a;
-        public static final int phone512=0x7f02002b;
-        public static final int phone60=0x7f02002c;
-        public static final int powered_by_google_dark=0x7f02002d;
-        public static final int powered_by_google_light=0x7f02002e;
-        public static final int taxi=0x7f02002f;
-        public static final int user=0x7f020030;
-        public static final int user100x100=0x7f020031;
-        public static final int user60x60=0x7f020032;
+        public static final int gettaxi=0x7f02001c;
+        public static final int ic_action_search=0x7f02001d;
+        public static final int ic_action_settings=0x7f02001e;
+        public static final int ic_launcher=0x7f02001f;
+        public static final int ic_plusone_medium_off_client=0x7f020020;
+        public static final int ic_plusone_small_off_client=0x7f020021;
+        public static final int ic_plusone_standard_off_client=0x7f020022;
+        public static final int ic_plusone_tall_off_client=0x7f020023;
+        public static final int mail100=0x7f020024;
+        public static final int mail512=0x7f020025;
+        public static final int mail60=0x7f020026;
+        public static final int map_icon=0x7f020027;
+        public static final int pass=0x7f020028;
+        public static final int pass100=0x7f020029;
+        public static final int pass60=0x7f02002a;
+        public static final int pass60r=0x7f02002b;
+        public static final int phone100=0x7f02002c;
+        public static final int phone512=0x7f02002d;
+        public static final int phone60=0x7f02002e;
+        public static final int powered_by_google_dark=0x7f02002f;
+        public static final int powered_by_google_light=0x7f020030;
+        public static final int taxi=0x7f020031;
+        public static final int taxifunction=0x7f020032;
+        public static final int user=0x7f020033;
+        public static final int user100x100=0x7f020034;
+        public static final int user60x60=0x7f020035;
     }
     public static final class id {
+        public static final int BackToMap=0x7f08002e;
+        public static final int EmailListView=0x7f080028;
+        public static final int LatListView=0x7f080029;
         public static final int LinkRegisterId=0x7f080018;
         public static final int LogEmail=0x7f080015;
-        public static final int LogOut=0x7f080026;
+        public static final int LogOut=0x7f08002c;
         public static final int LogPass=0x7f080016;
+        public static final int LonListView=0x7f080027;
         public static final int RegEmail=0x7f08001d;
         public static final int RegPass=0x7f080020;
         public static final int RegPass2=0x7f080022;
         public static final int RegPhone=0x7f08001f;
         public static final int RegUsername=0x7f08001b;
+        public static final int RequestlistView=0x7f080025;
+        public static final int TaxiFunction=0x7f08002d;
+        public static final int UserListView=0x7f080026;
         public static final int book_now=0x7f080010;
+        public static final int btnListView=0x7f08002a;
         public static final int btnLogin=0x7f080019;
         public static final int btnLoginLink=0x7f080024;
         public static final int btnRegister=0x7f080023;
@@ -438,6 +449,7 @@ containing a value of this type.
         public static final int buy_with_google=0x7f08000e;
         public static final int classic=0x7f080011;
         public static final int emailIcon=0x7f080014;
+        public static final int getTaxi=0x7f08002b;
         public static final int grayscale=0x7f080012;
         public static final int holo_dark=0x7f080005;
         public static final int holo_light=0x7f080006;
@@ -453,7 +465,6 @@ containing a value of this type.
         public static final int production=0x7f080007;
         public static final int sandbox=0x7f080008;
         public static final int satellite=0x7f080002;
-        public static final int searchIcon=0x7f080025;
         public static final int selectionDetails=0x7f08000b;
         public static final int strict_sandbox=0x7f080009;
         public static final int terrain=0x7f080003;
@@ -467,9 +478,13 @@ containing a value of this type.
         public static final int activity_login=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_register=0x7f030002;
+        public static final int activity_request=0x7f030003;
+        public static final int item_view=0x7f030004;
     }
     public static final class menu {
         public static final int main_activity_actions=0x7f0a0000;
+        public static final int main_activity_actions_taxi=0x7f0a0001;
+        public static final int request_activity_actions=0x7f0a0002;
     }
     public static final class string {
         public static final int Email=0x7f060028;

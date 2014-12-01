@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/UserListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/LonListView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/EmailListView"
+        android:adjustViewBounds="true"
+        android:maxHeight="80dp"
+        android:maxWidth="80dp"
+        android:src="@drawable/user" />
+
+    <TextView
+        android:id="@+id/EmailListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="user@gmail.com"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ab0909" />
+
+    <TextView
+        android:id="@+id/LatListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EmailListView"
+        android:layout_toRightOf="@+id/UserListView"
+        android:text="Lat" />
+
+    <TextView
+        android:id="@+id/LonListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LatListView"
+        android:layout_toRightOf="@+id/UserListView"
+        android:text="Lon" />
+
+    <Button
+        android:id="@+id/btnListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/LonListView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/EmailListView"
+        android:background="@drawable/button_login"
+        android:text="Accept"
+        android:textColor="#fff"
+        android:width="50dp" />
+
+</RelativeLayout>

@@ -1,9 +1,6 @@
 package com.huertasApp.citytaxi;
 
 
-import com.google.android.gms.maps.GoogleMap;
-
-
 import android.app.AlertDialog;
 import android.app.Service;
 import android.content.Context;
@@ -16,6 +13,8 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.util.Log;
+
+import com.google.android.gms.maps.GoogleMap;
  
 public class GPSTracker extends Service implements LocationListener {
  
