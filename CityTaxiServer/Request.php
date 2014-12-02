@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-/* This is develop by Juan Huertas */
+/* This is develop by Dana Shawareb */
 
 require_once(dirname(__FILE__)).'/assets/core/init.php';
 

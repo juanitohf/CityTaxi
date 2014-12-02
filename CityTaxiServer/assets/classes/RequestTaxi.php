@@ -2,6 +2,7 @@
 require_once(dirname(__FILE__)).'/../core/init.php';
 date_default_timezone_set('America/New_York');
 
+/* This is develop by Dana Shawareb */
 class RequestTaxi
 {
 	
