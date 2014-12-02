@@ -1,5 +1,5 @@
 <?php
-
+/* Develop by juan huertas */
 
 class DB
 	{

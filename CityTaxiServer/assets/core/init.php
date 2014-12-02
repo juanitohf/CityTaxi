@@ -2,6 +2,8 @@
 session_start();
 
 
+/* Develop by juan huertas */
+
 		
 $GLOBALS['config'] = array(
 	'mysql'	=> array(

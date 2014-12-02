@@ -1,5 +1,5 @@
 <?php
-
+/* Develop by juan huertas */
 class Config{
 	
 	public static function get($path = null){

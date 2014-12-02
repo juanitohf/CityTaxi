@@ -1,6 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
+/* This is develop by Juan Huertas */
 require_once(dirname(__FILE__)).'/assets/core/init.php';
 
 	// get content from url post
