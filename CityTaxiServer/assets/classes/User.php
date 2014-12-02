@@ -1,7 +1,7 @@
 <?php
 require_once(dirname(__FILE__)).'/../core/init.php';
 	
-
+/* Made by Tal Eidenzon  */
 class User
 {
 	
