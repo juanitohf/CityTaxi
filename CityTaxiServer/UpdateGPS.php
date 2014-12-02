@@ -1,4 +1,5 @@
 <?php
+/* create by Eric Bullock */
 header('Content-Type: application/json');
 
 require_once(dirname(__FILE__)).'/assets/core/init.php';
